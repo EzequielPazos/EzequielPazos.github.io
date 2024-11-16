@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Terapia</title>
+    <link rel="icon" href="../media/titleIcon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <header>
+        <img src="../media/titleIcon.png" alt="Manga Terapia Logotype" width="100" height="100">
+        <h1>MANGA TERAPIA</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li>Contacto</li>
+                <li><a href="../pages/Productos.html">Productos</a></li>
+                <li><a href="../pages/Reseñas.html">Reseñas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Contacte con nosotros</h2>
+        <form action="https://formspree.io/f/xwpkbjzb" method="post">
+            <Fieldset>
+                <legend>Datos Personales</legend>
+                <label for="nombre">Nombre*:</label>
+                <input type="text" id="" name="nombre" size="10" maxlength="15" required>
+                <label for="apellido">Apellido*:</label>
+                <input type="text" id="" name="apellido" size="10" maxlength="15" required> 
+                <br>
+                <br>
+                <label for="correo">E-mail*:</label>
+                <input type="email" name="correo" id="" required>   
+                <br>
+                <br> 
+                <label for="comentarios">Escriba su consulta: </label>
+                <br>
+                <textarea name="comentarios" id="" cols="30" rows="10" placeholder="Escriba aquí... (Max 300 caracts.)"></textarea>
+            </Fieldset>
+            <br>
+            <br>
+            <input type="submit" value="Enviar Datos">
+            <input type="reset" value="Borrar">
+            <br>
+            <br>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Manga Terapia. Todos los derechos reservados. Ezequiel Pazos Acebal</p>
+    </footer>
+</body>
+</html>

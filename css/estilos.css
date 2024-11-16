@@ -1,0 +1,96 @@
+/* Hoja de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+    font-optical-sizing: auto;
+}
+
+body{
+    background-color: #F5F5DC;
+}
+
+header{
+    background-color:#E07B39;
+    text-align: center;
+}
+
+h1{
+    display: inline-block;
+    vertical-align: 120%;
+    font-size: 40px;
+    position: relative;
+    padding: 0.3rem;
+    right: 300px;
+}
+
+nav{
+    text-align: left;
+    padding-left: 25px;
+    list-style: none;
+    text-decoration: none;
+    color: #B6A28E;
+    background-color: #DCE4C9;
+    padding: 25px;
+}
+
+#iconoBusqueda{
+    display:inline-block;
+    position: relative;
+    left: 50px;
+    padding: 60px;
+}
+
+.logoPagina{
+    position: relative;
+    padding: 0.3rem;
+    right: 300px;
+}
+
+main{
+    text-align: center;
+    background-image: url("../media/bgTest.jpeg");
+    background-size: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: lighten;
+    padding: 20px;
+}
+
+fieldset{
+    text-align: left;
+}
+
+i{
+    padding: 1px;
+}
+
+article{
+    background-color: #B6A28E;
+}
+
+footer{
+    background-color: #E07B39;
+    margin-bottom: 0;
+    padding: 25px;
+}
+  
+.productosFlex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    align-items:center;
+}
+
+.producto1{
+    background-color:#DCE4C9;
+}
+
+.producto2{
+    background-color:#DCE4C9;
+}
+
+.producto3{
+    background-color:#DCE4C9;
+}
