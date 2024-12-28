@@ -12,36 +12,60 @@
 </head>
 <body>
     <header>
-        <img class="logoPagina" src="media/titleIcon.png" alt="Manga Terapia Logotype" width="150" height="150">
-        <h1>MANGA TERAPIA</h1>
-        <i class="fi fi-rr-search"></i>
-        <img src="media/icons/busqueda.svg" alt="Busqueda" id="iconoBusqueda" width="30" height="30">
-        <div>
-            <nav>
-                <ul>
-                    <li>Inicio</li>
-                    <li><a href="pages/Contacto.html">Contacto</a></li>
-                    <li><a href="pages/Productos.html">Productos</a></li>
-                    <li><a href="pages/Reseñas.html">Reseñas</a></li>
-                </ul>
-            </nav>
-        </div>
+        <img class="logoPagina" src="media/navBarLogo.png" alt="Manga Terapia Logotype" width="250" height="75">
+        <form>
+            <div class="searchBar">
+                <input class="inputSearch" type="search" placeholder="Buscar mangas y más..." size="25">
+                <button><img class="botonBusqueda" src="media/icons/busqueda.svg" alt="Busqueda" id="iconoBusqueda" width="20" height="20"></button>
+            </div>
+        </form>
+        <nav>
+            <ul class="navLinks">
+                <li><a href="#"><img class="iconosNavBar" src="media/icons/usuario.svg" alt="Usuario" id="iconoUsuario" width="20" height="20"></a></li>
+                <li><a href="#"><img class="iconosNavBar" src="media/icons/marcador.svg" alt="Marcador" id="iconoMarcadores" width="20" height="20"></a></li>
+            </ul>
+        </nav>
+        <a class"cta" href="#"><button><img class="iconosNavBar" src="media/icons/carrito.svg" alt="Carrito" id="iconoCarrito" width="20" height="20"></button></a>
     </header>
     <main>
-        <section>
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/oFm6rbA5BD8?autoplay=1&mute=1&loop=1" title="night at the bookstore. [lofi / chillhop / anime mix]" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <article>
-                <h2>NUESTRO COMPROMISO</h2>
-                <p>
-                <i>
-                    NOSOTROS, EL EQUIPO DE MANGA TERAPIA, BUSCAMOS UNA NUEVA MANERA
-                    DE PRESENTARLES UN SERVICIO DE CALIDAD PARA LA COMPRA Y ENTREGA
-                    DE SUS SERIALIZACIONES FAVORITAS. ESPERAMOS CUMPLIR CON SUS
-                    EXPECTATIVAS!
-                </i>
-                </p>
-            </article>
+        <section class="container">
+            <div class="sliderWrapper">
+                <div class="slider">
+                    <img id="slide1" src="media/carousel/slider1.png" alt="Para estas fiestas, mangas con los mejores descuentos">
+                    <img id="slide2" src="media/carousel/slider2.png" alt="Panini Manga, Las novedades del 20 de diciembre">
+                    <img id="slide3" src="media/carousel/slider3.png" alt="IVREA, próximos ingresos. A partir del 27 de diciembre">
+                    <img id="slide4" src="media/carousel/slider1.png" alt="Para estas fiestas, mangas con los mejores descuentos">
+                <div class="sliderNav">
+                    <a href="#slide1"></a>
+                    <a href="#slide2"></a>
+                    <a href="#slide3"></a>
+                    <a href="#slide4"></a>
+                </div>
+            </div>
         </section>
+        <section class="containerProductos">
+            <h1>// NUEVOS INGRESOS //</h1>
+            <div class="divisionProductos">
+                
+            </div>
+        </section>
+        <section class="containerVideo">
+            <h2>// ZONA DE RELAX //</h2>
+            <div class="divisionVideo">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/oFm6rbA5BD8?autoplay=1&mute=1&loop=1" title="night at the bookstore. [lofi / chillhop / anime mix]" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+        <article>
+            <h3>NUESTRO COMPROMISO</h3>
+            <p>
+            <i>
+                NOSOTROS, EL EQUIPO DE MANGA TERAPIA, BUSCAMOS UNA NUEVA MANERA
+                DE PRESENTARLES UN SERVICIO DE CALIDAD PARA LA COMPRA Y ENTREGA
+                DE SUS SERIALIZACIONES FAVORITAS. ESPERAMOS CUMPLIR CON SUS
+                EXPECTATIVAS!
+            </i>
+            </p>
+        </article>
     </main>
     <footer>
         <p>&copy; 2024 Manga Terapia. Todos los derechos reservados. Ezequiel Pazos Acebal</p>
