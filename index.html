@@ -9,10 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="scripts/carrito.js" defer></script>
 </head>
 <body>
     <header>
-        <img class="logoPagina" src="media/navBarLogo.png" alt="Manga Terapia Logotype" width="250" height="75">
+        <a href="../index.html">
+            <img class="logoPagina" src="media/navBarLogo.png" alt="Manga Terapia Logotype" width="250" height="75">
+        </a>
         <form>
             <div class="searchBar">
                 <input class="inputSearch" type="search" placeholder="Buscar mangas y más..." size="25">
@@ -21,11 +24,14 @@
         </form>
         <nav>
             <ul class="navLinks">
-                <li><a href="#"><img class="iconosNavBar" src="media/icons/usuario.svg" alt="Usuario" id="iconoUsuario" width="20" height="20"></a></li>
+                <li><a href="./pages/Contacto.html"><img class="iconosNavBar" src="media/icons/usuario.svg" alt="Usuario" id="iconoUsuario" width="20" height="20"></a></li>
                 <li><a href="#"><img class="iconosNavBar" src="media/icons/marcador.svg" alt="Marcador" id="iconoMarcadores" width="20" height="20"></a></li>
             </ul>
         </nav>
-        <a class"cta" href="#"><button><img class="iconosNavBar" src="media/icons/carrito.svg" alt="Carrito" id="iconoCarrito" width="20" height="20"></button></a>
+        <button id="carritoButton" class="carrito-btn">
+            <img class="iconosNavBar" src="media/icons/carrito.svg" alt="Carrito" id="iconoCarrito" width="20" height="20">
+            <span id="carritoCount" class="carrito-count">0</span>
+        </button>    
     </header>
     <main>
         <section class="container">
@@ -43,20 +49,68 @@
                 </div>
             </div>
         </section>
-        <section class="containerProductos">
-            <h1>// NUEVOS INGRESOS //</h1>
-            <div class="divisionProductos">
-                
+        <section class="containerGeneros">
+            <h1>✦ EXPLORÁ NUEVOS GÉNEROS ✦</h1>
+            <div class="divisionGeneros">
+                <a href="pages/Productos.html">
+                <img src="media/shonen.png" alt="Manga shonen">
+                </a>
+                <a href="pages/Productos.html">
+                <img src="media/shoujo.png" alt="Manga shoujo">
+                </a>
+                <a href="pages/Productos.html">
+                <img src="media/seinen.png" alt="Manga seinen">
+                </a>
+                <a href="pages/Productos.html">
+                <img src="media/josei.png" alt="Manga josei">
+                </a>
+                <a href="pages/Productos.html">
+                <img src="media/bl.png" alt="Manga BL">
+                </a>
+                <a href="pages/Productos.html">
+                <img src="media/manwha.png" alt="Manwha">
+                </a>
             </div>
         </section>
         <section class="containerVideo">
-            <h2>// ZONA DE RELAX //</h2>
+            <h2>✦ ZONA DE CHILL ✦</h2>
             <div class="divisionVideo">
                 <iframe width="640" height="360" src="https://www.youtube.com/embed/oFm6rbA5BD8?autoplay=1&mute=1&loop=1" title="night at the bookstore. [lofi / chillhop / anime mix]" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
+        <section class="containerVentajas">
+            <div class="divisionVentajas">
+                <div class="ventaja1">
+                    <img id="ventaja1" src="media/icons/tarjeta-credito.svg" alt="Tarjeta de credito">
+                    <div class="textoVentaja">
+                        <span>Hasta 12 cuotas</span> 
+                        <p>abonando con tarjetas de crédito</p>
+                    </div>
+                </div>
+                <div class="ventaja2">
+                    <img id="ventaja2" src="media/icons/camion.svg" alt="Camión de entregas">
+                    <div class="textoVentaja">
+                        <span>Envíos a todo el país</span> 
+                        <p>a través de OCA</p>
+                    </div>
+                </div>
+                <div class="ventaja3">
+                    <img id="ventaja3" src="media/icons/escudo.svg" alt="Garantía">
+                    <div class="textoVentaja">
+                        <span>Garantía oficial</span>
+                        <p>de hasta 30 días en todos los productos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="containerDescuentos">
+            <h2></h2>
+            <div class="divisionDescuentos">
+
+            </div>
+        </section>
         <article>
-            <h3>NUESTRO COMPROMISO</h3>
+            <h3>✦ NUESTRO COMPROMISO ✦</h3>
             <p>
             <i>
                 NOSOTROS, EL EQUIPO DE MANGA TERAPIA, BUSCAMOS UNA NUEVA MANERA
@@ -67,6 +121,31 @@
             </p>
         </article>
     </main>
+
+    <div id="carritoSidebar" class="carrito-sidebar">
+        <h2>Carrito</h2>
+        <ul id="carritoLista"></ul>
+        <p>Subtotal: $<span id="subtotal-carrito">0</span></p>
+        <p>Descuento: $<span id="descuento-carrito">0</span></p>
+        <p>IVA (21%): $<span id="iva-carrito">0</span></p>
+        <p><strong>Total: $<span id="total-carrito">0</span></strong></p>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <button onclick="mostrarCheckout()">Checkout</button>
+        <button id="cerrarCarrito">Cerrar</button>
+    </div>
+    
+    <div id="checkout-modal">
+        <div class="checkout-content">
+            <h2>Finalizar Compra</h2>
+            <p>Subtotal: $<span id="modal-subtotal">0</span></p>
+            <p>Descuento: $<span id="modal-descuento">0</span></p>
+            <p>IVA: $<span id="modal-iva">0</span></p>
+            <p><strong>Total a Pagar: $<span id="modal-total">0</span></strong></p>
+            <button onclick="realizarCompra()">Confirmar Compra</button>
+            <button onclick="cerrarCheckout()">Cancelar</button>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 Manga Terapia. Todos los derechos reservados. Ezequiel Pazos Acebal</p>
     </footer>

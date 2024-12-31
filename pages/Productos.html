@@ -9,39 +9,82 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../scripts/carrito.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="../media/titleIcon.png" alt="Manga Terapia Logotype" width="100" height="100">
-        <h1>MANGA TERAPIA</h1>
+        <a href="../index.html">
+            <img class="logoPagina" src="../media/navBarLogo.png" alt="Manga Terapia Logotype" width="250" height="75">
+        </a>
+        <form>
+            <div class="searchBar">
+                <input class="inputSearch" type="search" placeholder="Buscar mangas y más..." size="25">
+                <button><img class="botonBusqueda" src="../media/icons/busqueda.svg" alt="Busqueda" id="iconoBusqueda" width="20" height="20"></button>
+            </div>
+        </form>
         <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../pages/Contacto.html">Contacto</a></li>
-                <li>Productos</li>
-                <li><a href="../pages/Reseñas.html">Reseñas</a></li>
+            <ul class="navLinks">
+                <li><a href="Contacto.html"><img class="iconosNavBar" src="../media/icons/usuario.svg" alt="Usuario" id="iconoUsuario" width="20" height="20"></a></li>
+                <li><a href="#"><img class="iconosNavBar" src="../media/icons/marcador.svg" alt="Marcador" id="iconoMarcadores" width="20" height="20"></a></li>
             </ul>
         </nav>
+        <button id="carritoButton" class="carrito-btn">
+            <img class="iconosNavBar" src="../media/icons/carrito.svg" alt="Carrito" id="iconoCarrito" width="20" height="20">
+            <span id="carritoCount" class="carrito-count">0</span>
+        </button>         
     </header>
     <main>
-        <section>
-            <h2>MANGAS</h2>
+        <section class="containerProductos">
+            <h2>✦ MANGAS ✦</h2>
             <div class="productosFlex">
                 <div class="producto1">
-                    <img src="../media/products/spyFamily1.jpg" alt="Spy Family Tomo 1" width="300" height="300">
-                    <h3>SPY X FAMILY - TOMO 1 - $7000</h3>
+                    <a href="#">
+                        <img src="../media/products/spyFamily1.jpg" alt="Spy Family Tomo 1" width="300" height="300">
+                        <h3>SPY X FAMILY - TOMO 1 - $7000</h3>
+                        <button class="add-to-cart" data-producto="SPY X FAMILY - TOMO 1" data-precio="7000">Agregar al Carrito</button>
+                    </a>
                 </div>
                 <div class="producto2">
-                    <img src="../media/products/ippo1.png" alt="Hajime no Ippo Tomo 1" width="300" height="300">
-                    <h3>HAJIME NO IPPO - TOMO 1 - $10000</h3>
+                    <a href="#">
+                        <img src="../media/products/ippo1.png" alt="Hajime no Ippo Tomo 1" width="300" height="300">
+                        <h3>HAJIME NO IPPO - TOMO 1 - $10000</h3>
+                        <button class="add-to-cart" data-producto="HAJIME NO IPPO - TOMO 1" data-precio="10000">Agregar al Carrito</button>
+                    </a>
                 </div>
                 <div class="producto3">
-                    <img src="../media/products/vinlandSaga1.jpg" alt="Vinland Saga Tomo 1" width="300" height="300">
-                    <h3>VINLAND SAGA - TOMO 1 - $8000</h3>
+                    <a href="#">
+                        <img src="../media/products/vinlandSaga1.jpg" alt="Vinland Saga Tomo 1" width="300" height="300">
+                        <h3>VINLAND SAGA - TOMO 1 - $8000</h3>
+                        <button class="add-to-cart" data-producto="VINLAND SAGA - TOMO 1" data-precio="8000">Agregar al Carrito</button>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
+
+    <div id="carritoSidebar" class="carrito-sidebar">
+        <h2>Carrito</h2>
+        <ul id="carritoLista"></ul>
+        <p>Subtotal: $<span id="subtotal-carrito">0</span></p>
+        <p>Descuento: $<span id="descuento-carrito">0</span></p>
+        <p>IVA (21%): $<span id="iva-carrito">0</span></p>
+        <p><strong>Total: $<span id="total-carrito">0</span></strong></p>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+        <button onclick="mostrarCheckout()">Checkout</button>
+        <button id="cerrarCarrito">Cerrar</button>
+    </div>
+    
+    <div id="checkout-modal">
+        <div class="checkout-content">
+            <h2>Finalizar Compra</h2>
+            <p>Subtotal: $<span id="modal-subtotal">0</span></p>
+            <p>Descuento: $<span id="modal-descuento">0</span></p>
+            <p>IVA: $<span id="modal-iva">0</span></p>
+            <p><strong>Total a Pagar: $<span id="modal-total">0</span></strong></p>
+            <button onclick="realizarCompra()">Confirmar Compra</button>
+            <button onclick="cerrarCheckout()">Cancelar</button>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 Manga Terapia. Todos los derechos reservados. Ezequiel Pazos Acebal</p>
     </footer>
